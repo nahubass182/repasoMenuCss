@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.header{
+    display: flex;
+    height: 60px; /*el largo del fondo*/
+    width: 90%; /* ancho del fondo*/
+    margin: auto; /*para que quede centrado el fondo del menu*/
+    background-image: linear-gradient(to right, yellow, yellowgreen); /* para hacer un degrade de fondo*/
+    justify-content: space-between; /* para que los elementos se separen, uno en una punta, el otro en la otra.*/
+    align-items: center; /*para centrar los elementos, si algunos no se centran es porque tamb los tenemos que centrar
+    en sus contenedores.*/
+    padding: 10px;
+}
+
+.logo_img{
+    height: 60px; /*achicar logo*/
+}
+
+.menu-icon img{
+    height: 40px;
+    width: 40px;
+    border-radius: 2px; /*achicamos menu hamburgueza*/
+    
+}
+.menu-icon, #check{
+    display: none;   /*ponemos display none para que no se vea el menu hamburgueza*/
+}
+
+.logo{
+    display: flex;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center; /*centramos items*/
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    font-family: 'Rubik Vinyl', cursive;
+    font-size: 40px;
+}
+.menu__lista{
+    padding-right: 50px;
+    color: black;
+}
+.menu__lista:hover{
+    color: gray;  /*para cuando pase el cursor por arriba del link, cambie de color, en este caso de negro a gris*/
+}
+
+@media (max-width: 700px){ /*ponemos las clases que querramos modificar cuando la pantalla se achique.*/
+    .checkbtn{ /*boton*/
+        display: block;
+    }
+    .menu-icon{ /*menu hamburguesa*/
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .nav-menu ul{
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: -110%;
+        background-image: linear-gradient(to right, yellow, yellowgreen);
+        width: 100%;
+        height: 100vh;
+        right: 0;
+    }
+    .nav-menu ul li{
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }                                     /*menu hamburguesa*/
+}
